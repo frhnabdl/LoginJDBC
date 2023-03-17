@@ -11,9 +11,10 @@ import io.spring.start.dto.Login;
 @RequestMapping("dashboard")
 public class DashboardController {
     @GetMapping
-    public String index(Model model){ //untuk get all / select * / read
+    public String index(Model model) { // untuk get all / select * / read
         model.addAttribute("dasboard", new Login());
         return "user-management/dashboard";
     }
 }
 // farhan
+// rifki
