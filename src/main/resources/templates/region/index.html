@@ -1,0 +1,34 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+<div class="container" style="margin: 100px;">
+    <a th:href="@{region/form}" class="btn btn-primary" style="margin-bottom: 25px;">CREATE</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>REGION ID</th>
+                <th>REGION NAME</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="region : ${regions}">
+                <td th:text="${region.id}"></td>
+                <td th:text="${region.name}"></td>
+                <td>
+                    <div class="row">
+                        <div class="col-sm-1">                
+                            <a th:href="@{/region/form/{id} (id = ${region.id})}" class="btn btn-warning">Edit</a>
+                        </div>
+            
+                        <div class="col-sm-1">
+                            <form method="post" th:action="@{/region/delete/{id} (id = ${region.id})}">
+                                <button type="submit" class="btn btn-danger" style="margin-left: 20px;">Delete</button>
+                            </form>                
+                        </div>
+                    </div>                                        
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

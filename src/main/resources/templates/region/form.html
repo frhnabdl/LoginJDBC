@@ -1,0 +1,27 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<div class="container" style="margin: 100px;">
+    <form method="post" th:action="@{/region/save}" th:object="${region}">
+        <!-- ID hidden -->
+        <div class="form-group" style="margin: 5px" hidden>
+            <label for="id" class="col-form-label">Id</label>
+            <input type="text" class="form-control" id="id" th:field="*{id}">
+        </div>
+
+        <!-- name -->
+        <div class="form-group col-md-4" style="margin: 5px">
+            <label for="name" class="col-form-label">Region Name</label>
+            <input type="text" class="form-control" id="name" th:field="*{name}">
+        </div>
+
+        <!-- Back | Submit -->
+        <div class="row">
+            <div class="col-sm-1">                
+                <a th:href="@{/region}" class="btn btn-danger">Back</a>
+            </div>
+
+            <div class="col-sm-1">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
